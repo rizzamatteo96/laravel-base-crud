@@ -3,6 +3,7 @@
 
 @section('content')
   <div>
-    prova
+    @dd($comics)
+
   </div>
 @endsection

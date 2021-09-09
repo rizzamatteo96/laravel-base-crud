@@ -3,6 +3,6 @@
 
 @section('content')
   <div>
-    prova
+    <a href="{{route('comics.index')}}">clicca qui</a>
   </div>
 @endsection
