@@ -23,9 +23,9 @@
             <td>{{$comic->price}}€</td>
             <td>{{$comic->sale_date}}</td>
             <td>
-              <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>
-              <a href="#" class="btn btn-secondary">Modifica</a>
-              <a href="#" class="btn btn-danger">Cancella</a>
+              <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary px-3"><i class="fas fa-info"></i></i></a>
+              <a href="#" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
+              <a href="#" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
             </td>
           </tr>
         @endforeach
