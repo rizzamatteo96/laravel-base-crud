@@ -4,7 +4,11 @@
 
 @section('content')
   <div class="container">
-    <form>
+    <form action="{{route('comics.store')}}" method="POST">
+
+      {{-- csrf - Token laravel per rendere sicuro l'invio del form nel sito --}}
+      @csrf
+
       <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
         <input type="text" class="form-control" id="title" name="title">
