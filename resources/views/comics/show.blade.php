@@ -33,7 +33,7 @@
 
     <div class="d-flex justify-content-between mt-5">
       <a href="{{route('comics.index')}}" class="btn btn-outline-dark "><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
-      <a href="#" class="btn btn-outline-dark"> Modifica elemento <i class="fas fa-edit ms-2"></i></a>
+      <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-outline-dark"> Modifica elemento <i class="fas fa-edit ms-2"></i></a>
       <a href="#" class="btn btn-outline-danger"> Elimina <i class="far fa-trash-alt ms-2"></i></a>
     </div>
 
