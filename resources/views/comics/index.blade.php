@@ -4,23 +4,18 @@
 @section('content')
   <div class="container my-5">
     {{-- @dd($comics) --}}
-    <div class="d-flex justify-content-between">
-      @if (session('modifica') || session('cancella'))
-        <p class="alert alert-primary">
-          @if (session('modifica'))
-            {{session('modifica')}}            
-          @endif
-          @if (session('cancella'))
-            {{session('cancella')}}            
-          @endif
-        </p>
-      @else
-        <p>
-          {{-- da lasciare vuoto per l'ipaginazione --}}
-        </p>
-      @endif
-      <a href="{{route('comics.create')}}" class="btn btn-outline-dark">Aggiungi elemento</a>
-    </div>
+    @if (session('modifica'))
+      <p class="alert alert-warning">
+        {{session('modifica')}}   
+      </p>         
+    @endif
+    @if (session('cancella'))
+      <p class="alert alert-danger">
+        {{session('cancella')}}   
+      </p>            
+    @endif
+
+    <div class="text-end"><a href="{{route('comics.create')}}" class="btn btn-outline-dark">Aggiungi elemento <i class="fas fa-plus ms-2"></i></a></div>
 
     <table class="table">
       <thead>
@@ -45,7 +40,7 @@
               <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="d-inline-block">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')"><i class="far fa-trash-alt"></i></button>
               </form>
             </td>
           </tr>

@@ -32,13 +32,13 @@
     </div>
 
     <div class="d-flex justify-content-between mt-5">
-      <a href="{{route('comics.index')}}" class="btn btn-outline-dark "><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
+      <a href="{{route('comics.index')}}" class="btn btn-outline-dark "><i class="fas fa-arrow-left me-2"></i> Torna alla lista</a>
       <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-outline-dark"> Modifica elemento <i class="fas fa-edit ms-2"></i></a>
       
       <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger">Elimina</button>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')">Elimina</button>
       </form>
     
     </div>

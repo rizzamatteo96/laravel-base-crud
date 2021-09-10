@@ -20,7 +20,7 @@
       </div>
       <div class="mb-3">
         <label for="description" class="form-label">Descrizione</label>
-        <input type="text" class="form-control" id="description" name="description" value="{{$comic->description}}">
+        <textarea class="form-control" id="description" name="description" >{{$comic->description}}</textarea>
       </div>
       <div class="mb-3">
         <label for="thumb" class="form-label">Immagine</label>
@@ -28,7 +28,7 @@
       </div>
       <div class="mb-3">
         <label for="price" class="form-label">Prezzo</label>
-        <input type="number" class="form-control" id="price" name="price" value="{{$comic->price}}">
+        <input type="number" class="form-control" id="price" name="price" max="99999,99" value="{{$comic->price}}">
       </div>
       <div class="mb-3">
         <label for="series" class="form-label">Serie</label>
@@ -46,6 +46,6 @@
     </form>
 
     {{-- pulsante per tornare alla lista dei comics --}}
-    <a href="{{route('comics.index')}}" class="btn btn-outline-dark mt-5"><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
+    <a href="{{route('comics.index')}}" class="btn btn-outline-dark mt-5"><i class="fas fa-arrow-left me-2"></i> Torna alla lista</a>
   </div>
 @endsection
