@@ -4,6 +4,9 @@
 @section('content')
   <div class="container my-5">
     {{-- @dd($comics) --}}
+    <div class="row text-center">
+      <a href="{{route('comics.create')}}" class="btn btn-outline-dark">Aggiungi elemento</a>
+    </div>
 
     <table class="table">
       <thead>
