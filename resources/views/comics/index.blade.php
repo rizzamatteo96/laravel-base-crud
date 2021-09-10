@@ -4,7 +4,21 @@
 @section('content')
   <div class="container my-5">
     {{-- @dd($comics) --}}
-    <div class="row text-center">
+    <div class="d-flex justify-content-between">
+      @if (session('modifica') || session('cancella'))
+        <p class="alert alert-primary">
+          @if (session('modifica'))
+            {{session('modifica')}}            
+          @endif
+          @if (session('cancella'))
+            {{session('cancella')}}            
+          @endif
+        </p>
+      @else
+        <p>
+          {{-- da lasciare vuoto per l'ipaginazione --}}
+        </p>
+      @endif
       <a href="{{route('comics.create')}}" class="btn btn-outline-dark">Aggiungi elemento</a>
     </div>
 
@@ -38,8 +52,5 @@
         @endforeach
       </tbody>
     </table>
-
-
-
   </div>
 @endsection
