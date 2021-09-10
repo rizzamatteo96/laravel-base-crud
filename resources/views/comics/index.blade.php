@@ -28,7 +28,11 @@
             <td>
               <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary px-3"><i class="fas fa-info"></i></i></a>
               <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
-              <a href="#" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+              <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="d-inline-block">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+              </form>
             </td>
           </tr>
         @endforeach

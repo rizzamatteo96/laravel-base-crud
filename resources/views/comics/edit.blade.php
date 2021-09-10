@@ -44,6 +44,8 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    {{-- pulsante per tornare alla lista dei comics --}}
     <a href="{{route('comics.index')}}" class="btn btn-outline-dark mt-5"><i class="fas fa-arrow-left me-2"></i> Torna indietro</a>
   </div>
 @endsection
