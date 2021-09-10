@@ -87,7 +87,7 @@ class ComicController extends Controller
         $formData = $request->all();
         
         $comic->update($formData);
-
+        // dd($comic);
         return redirect()->route('comics.index')->with('modifica','Hai modificato l\'elemento #' . $comic->id);
     }
 

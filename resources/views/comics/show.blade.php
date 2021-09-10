@@ -13,7 +13,7 @@
 
     <div class="row">
       <div class="col-2">
-        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        <img src="{{$comic->thumb}}" alt="{{$comic->title}}" class="w-100">
       </div>
 
       <div class="col-10">
@@ -38,7 +38,7 @@
       <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')">Elimina</button>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')">Elimina <i class="far fa-trash-alt"></i></button>
       </form>
     
     </div>
